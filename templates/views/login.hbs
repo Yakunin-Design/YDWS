@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=0, initial-scale=0.7, width=550">
+	<title>Client Side Admin | Log In Page</title>
+	<link rel="stylesheet" href="css/login.min.css">
+	<link rel="stylesheet" href="css/lightTheme.min.css" id="themeParam">
+	<link rel="icon" href="img/testLogo9.svg">
+	<script src="js/translation.js"></script>
+</head>
+<body>
+
+	<div class="log-in-field">
+
+		<div class="log-in-field__logo">
+			<a href="https://www.yakunin.design/">
+				<img src="img/logoW.svg" id="logoToggle">
+			</a>
+		</div>
+		
+		<h3 class="log-in-field__title">Confirm access</h3>
+		
+		<div class="log-in-field__log-in-card card">
+			<label class="card__email-label">Email</label>
+			<input class="card__email-input card__input" type="text">
+			<div class="card__password-label">Password</div>
+			<input class="card__password-input card__input" type="password">
+
+			<div class="card__prompt">
+				<a href="#" tabindex="1">Forgot password?</a>
+			</div>
+			
+			<button class="card__button">Confirm password</button>
+		</div>
+		
+		<div class="log-in-field__tip">
+			<p>Tip: You are entering <a href="">sudo mode.</a> We won't ask for your password again for a few hours</p>
+		</div>
+
+		<div class="log-in-field__nav nav">
+			<div class="nav__links link-bar">
+				<a href="#" class="nav__terms link-bar__link">Terms</a>
+				<a href="#" class="nav__russian link-bar__link">Russian</a>
+				<a href="#" class="nav__dark link-bar__link" id="theme-toggle">Dark</a>
+			</div>
+			<a href="https://www.yakunin.design/" target="_blank" class="nav__contact">Contact yakunin.design</a>
+		</div>
+	
+	</div>
+
+	<script src="js/dark_theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+// Client side admin log in page
+// colors for light theme 
+
+body {
+    background: #F3F3F3;
+    color: #1E1E1E;
+}
+
+a{
+    color: #0075FF;
+}
+
+.log-in-field {
+    &__tip {
+        color: #7E808D;
+    }
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #D6D6D6;
+
+        &__input {
+            background: #F4F4F4;
+        }
+
+		// .card__button
+
+		&__button {
+            background: #72AB70;
+            color: #fff;
+		}
+}
+
+.nav {
+    color: #7E808D;
+		// .nav__contact
+		&__contact {
+            color: #7E808D;
+		}
+}

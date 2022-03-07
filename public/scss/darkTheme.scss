@@ -1,0 +1,48 @@
+// Client side admin log in page
+// colors for dark theme
+
+body {
+    background: #202021;
+    color: #D9D9D9;
+}
+
+a{
+    color: #51A1FF;
+}
+
+.log-in-field {
+		&__tip {
+            color: #7E808D;
+		}
+}
+
+.card {
+    background: #27272A;
+    border: 1px solid #383838;
+
+        &__input {
+            background: #1F1F1F;
+            color: #D9D9D9;
+            &:focus-visible{
+                outline: none;
+            }
+            &:focus{
+               border: 1px solid #0075FF;
+            }
+        }
+        
+		// .card__button
+
+		&__button {
+            background: green;
+            color: #fff;
+		}
+}
+
+.nav {
+    color: #838383;
+		// .nav__contact
+		&__contact {
+            color: #838383;
+		}
+}
