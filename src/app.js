@@ -1,6 +1,7 @@
 // npm run dev
 
 const express = require('express')
+const res = require('express/lib/response')
 const hbs = require('hbs')
 const path = require('path')
 
@@ -11,6 +12,7 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 const app = express()
 const port = process.env.PORT || 6969
+const lang = require('./middleware/check_language')
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs')
@@ -20,9 +22,8 @@ hbs.registerPartials(partialsPath)
 // Setting up static directory
 app.use(express.static(publicDir))
 
-app.get('test/:id', (req, res) => {
-    const custom_string = req.params.id
-    res.render('index', {cs: custom_string})
+app.get('/:lang/index', lang, (req, res) => {
+    res.render('index', {lang: res.lang})
 })
 
 app.get('/gift', (req, res) => {
@@ -35,24 +36,24 @@ app.get('/gift', (req, res) => {
     res.render('404')
 })
 
-app.get('/coming-soon', (req, res) => {
-    res.render('coming_soon')
+app.get('/:lang/coming-soon', lang, (req, res) => {
+    res.render('coming_soon', {lang: res.lang})
 })
 
 app.get('/dont-click', (req, res) => {
     res.redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 })
 
-app.get('/login', (req, res) => {
-    res.render('login')
-})
-
 app.get('/search', (req, res) => {
     res.render('search')
 })
 
-app.get('*', (req, res) => {
+app.get('/:lang/*', (req, res) => { 
     res.render('404')
+})
+
+app.get('*/:req', (req, res) => {
+    res.redirect('/en/' + req.params.req)
 })
 
 app.listen(port, () => { 
